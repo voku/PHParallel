@@ -201,7 +201,7 @@ Update or create composer.json.
 ``` json
 {
     "require": {
-        "kzykhys/parallel": "dev-master"
+        "tiagobutzke/phparallel": "0.1.1"
     }
 }
 ```

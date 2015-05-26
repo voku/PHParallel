@@ -6,6 +6,10 @@
         {
             "name": "Kazuyuki Hayashi",
             "email": "hayashi@valnur.net"
+        },
+        {
+            "name": "Tiago Butzke",
+            "email": "tiago.butzke@gmail.com"
         }
     ],
     "minimum-stability": "stable",
