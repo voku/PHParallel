@@ -2,8 +2,7 @@ Parallel.php - Simple multitasking library
 ==========================================
 
 [![Latest Unstable Version](https://poser.pugx.org/kzykhys/parallel/v/unstable.png)](https://packagist.org/packages/kzykhys/parallel)
-[![Build Status](https://travis-ci.org/kzykhys/Parallel.php.png?branch=master)](https://travis-ci.org/kzykhys/Parallel.php)
-[![Coverage Status](https://coveralls.io/repos/kzykhys/Parallel.php/badge.png)](https://coveralls.io/r/kzykhys/Parallel.php)
+[![Build Status](https://travis-ci.org/tiagobutzke/PHParallel.svg)](https://travis-ci.org/tiagobutzke/PHParallel)
 
 * [Requirements](#requirements)
 * [Usage](#usage)
