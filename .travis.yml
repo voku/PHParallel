@@ -2,8 +2,6 @@ language: php
 
 php:
   - 5.5
-  - 5.4
-  - hhvm
 
 matrix:
   allow_failures:
@@ -17,7 +15,7 @@ before_script:
 
 script:
   - mkdir -p build/logs
-  - phpunit -c phpunit.xml.dist --coverage-php build/logs/clover-parent.cov
+  - bin/phpunit -c phpunit.xml.dist --coverage-php build/logs/clover-parent.cov
 
 after_script:
   - php phpcov.phar --merge --clover build/logs/clover.xml build/logs
