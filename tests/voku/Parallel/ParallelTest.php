@@ -44,8 +44,9 @@ class ParallelTest extends PHPUnit_Framework_TestCase
   {
     $parallel = new Parallel();
     $parallel->each(
-        [1, 2, 3], function ($value) {
-    }
+        [1, 2, 3],
+        function ($value) {
+        }
     );
   }
 
@@ -53,9 +54,10 @@ class ParallelTest extends PHPUnit_Framework_TestCase
   {
     $parallel = new Parallel();
     $values = $parallel->map(
-        [1, 2, 3], function ($value) {
-      return $value * 2;
-    }
+        [1, 2, 3],
+        function ($value) {
+          return $value * 2;
+        }
     );
 
     self::assertEquals([2, 4, 6], $values);
