@@ -1,0 +1,88 @@
+<?php
+
+namespace voku\ParallelHelper\Thread;
+
+class Thread implements Runnable
+{
+  /**
+   * @var int
+   */
+  protected $pid;
+
+  /**
+   * @var Runnable
+   */
+  protected $runnable;
+
+  /**
+   * @param Runnable $runnable
+   */
+  public function __construct(Runnable $runnable = null)
+  {
+    $this->runnable = $runnable;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function run()
+  {
+    if ($this->runnable) {
+      $this->runnable->run();
+    }
+
+    return null;
+  }
+
+  /**
+   * Start a thread
+   */
+  public function start()
+  {
+    $this->fork();
+
+    if (!$this->pid) {
+      $this->run();
+
+      if (substr(PHP_SAPI, 0, 3) == 'cli') {
+        exit;
+      }
+
+      pcntl_wexitstatus(null);
+    }
+  }
+
+  /**
+   * Waits on a forked child
+   */
+  public function wait()
+  {
+    if ($this->pid) {
+      pcntl_waitpid($this->pid, $status);
+    }
+  }
+
+  /**
+   * Returns process id
+   *
+   * @return int
+   */
+  public function getPid()
+  {
+    return $this->pid;
+  }
+
+  /**
+   * Forks the currently running process
+   *
+   * @throws \RuntimeException
+   */
+  protected function fork()
+  {
+    if (($this->pid = pcntl_fork()) == -1) {
+      // @codeCoverageIgnoreStart
+      throw new \RuntimeException('Unable to fork child process');
+      // @codeCoverageIgnoreEnd
+    }
+  }
+}

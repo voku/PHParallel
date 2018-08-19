@@ -1,9 +1,8 @@
 Parallel.php - Simple multitasking library
 ==========================================
 
-[![Latest Unstable Version](https://poser.pugx.org/kzykhys/parallel/v/unstable.png)](https://packagist.org/packages/kzykhys/parallel)
-[![Build Status](https://travis-ci.org/tiagobutzke/PHParallel.svg)](https://travis-ci.org/tiagobutzke/PHParallel)
-[![Coverage Status](https://coveralls.io/repos/github/tiagobutzke/PHParallel/badge.svg?branch=master)](https://coveralls.io/github/tiagobutzke/PHParallel?branch=master)
+[![Build Status](https://travis-ci.org/voku/PHParallel.svg)](https://travis-ci.org/voku/PHParallel)
+[![Coverage Status](https://coveralls.io/repos/github/voku/PHParallel/badge.svg?branch=master)](https://coveralls.io/github/voku/PHParallel?branch=master)
 
 * [Requirements](#requirements)
 * [Usage](#usage)
@@ -15,7 +14,7 @@ Requirements
 ------------
 
 * UNIX
-* CGI or CLI version of PHP5.4+
+* CGI or CLI version of PHP5.5+
 * Compiled with **--enable-pcntl**
 
 Usage
@@ -26,7 +25,7 @@ Usage
 ``` php
 <?php
 
-use KzykHys\Parallel\Parallel;
+use voku\ParallelHelper\Parallel\Parallel;
 
 require __DIR__ . "/vendor/autoload.php";
 
@@ -67,7 +66,7 @@ Done
 ``` php
 <?php
 
-use KzykHys\Parallel\Parallel;
+use voku\ParallelHelper\Parallel\Parallel;
 
 require __DIR__ . "/vendor/autoload.php";
 
@@ -108,7 +107,7 @@ array(2) {
 ``` php
 <?php
 
-use KzykHys\Parallel\Parallel;
+use voku\ParallelHelper\Parallel\Parallel;
 
 require __DIR__ . "/vendor/autoload.php";
 
@@ -130,7 +129,7 @@ $parallel->each(['a', 'b'], function ($str) {
 ``` php
 <?php
 
-use KzykHys\Parallel\Parallel;
+use voku\ParallelHelper\Parallel\Parallel;
 
 require __DIR__ . "/vendor/autoload.php";
 
@@ -160,8 +159,8 @@ array(3) {
 ``` php
 <?php
 
-use KzykHys\Thread\Runnable;
-use KzykHys\Thread\Thread;
+use voku\ParallelHelper\Thread\Runnable;
+use voku\ParallelHelper\Thread\Thread;
 
 require __DIR__ . "/vendor/autoload.php";
 
@@ -201,7 +200,7 @@ Update or create composer.json.
 ``` json
 {
     "require": {
-        "tiagobutzke/phparallel": "0.1.1"
+        "voku/phparallel": "0.1.1"
     }
 }
 ```
@@ -214,4 +213,4 @@ The MIT License
 Author
 ------
 
-Kazuyuki Hayashi (@kzykhys)
+Kazuyuki Hayashi (@voku\ParallelHelper)

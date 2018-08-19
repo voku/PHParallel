@@ -1,4 +1,6 @@
-/vendor/
-/build/
-composer.phar
-phpcov.phar
+# composer
+vendor
+composer.lock
+
+# php (phpunit)
+build/
